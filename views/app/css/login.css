@@ -1,0 +1,30 @@
+body{
+  background-color: antiquewhite;
+}
+.flex-container{
+  padding: 20px;
+  border: black 1px solid;
+display: flex;
+/*flex-direction: row-reverse o column-reverse /*direccion en fila o columna*/
+/*flex-wrap: wrap; /* si son demasiadas cajas hara salto de linea*/
+
+flex-flow: row wrap; /* combina flex-direction y flex-wrap*/
+justify-content: space-around; /*alinea elementos en el centro de la caja*/
+align-items:flex-start;
+height:100%;
+align-content: center;
+}
+
+.flexBotas{  
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 15px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0px;
+  z-index: 1;
+}
