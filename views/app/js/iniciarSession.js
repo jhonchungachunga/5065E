@@ -21,7 +21,7 @@ function iniciarSession(){
             }
             
         }else if(connect.readyState!=4){
-            result='<div class="alert alert-primary" role="alert">estamos procesando la solicitud...!.</div>';
+            result='<div class="alert alert-primary" role="alert">estamos procesando la solicitud...!.</div><div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>';
             __('mensaje').innerHTML= result;
           
         }

@@ -12,4 +12,5 @@
     <!---scripts del sistema------>
     <script src="<?php echo (JS_RUTA.'/iniciarSession.js')?>"></script>
     <script src="<?php echo (JS_RUTA.'/comunes.js')?>"></script>
+    <script src="<?php echo (JS_RUTA.'/calcular_precio_hora.js')?>"></script>
 </head>

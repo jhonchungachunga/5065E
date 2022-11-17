@@ -18,5 +18,6 @@ define('JS_RUTA','views/app/js');
 require_once 'core/model/Conexion.php';
 require_once 'core/model/Usuario.php';
 require_once 'core/model/Select.php';
+require_once 'core/model/Orden.php';
 
 require_once 'core/bin/functions/Encrypt.php';
