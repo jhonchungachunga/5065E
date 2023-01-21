@@ -1,7 +1,19 @@
-<?php 
+<?php
 $lista=new Orden;
 $datos=$lista->leerOrden();
-echo '<h1>Lista de Ordenes generadas</h1>';
+
+$estadisticas=new Estadistica;
+$horas=$estadisticas->totalHoras();
+$minutos=$estadisticas->totalMinutos();
+$minutosA_Horas=$minutos/60;
+$cantidad=$estadisticas->totalCantidad();
+echo '<div class="card m-1" style="width: 18rem;">
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">Horas ',$horas+$minutosA_Horas,'</li>
+  <li class="list-group-item">Total S/. ',$cantidad,'</li>
+</ul>
+</div>';
+echo '<h1>Ordenes generadas</h1>';
 if($datos){
     echo '<table class="table table-info table-striped table-hover">
   <thead>
@@ -33,11 +45,11 @@ if($datos){
   </ul>
 </div>
 
-  
+
       </td>
       <td>';
       echo $item['descEstado']=='PENDIENTE'?'<span class="badge text-bg-warning">'.$item['descEstado'].'</span>':'<span class="badge text-bg-info">'.$item['descEstado'].'</span>';
-      
+
       echo '</td>
       </tr>
       </tbody>';

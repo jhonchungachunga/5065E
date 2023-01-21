@@ -4,7 +4,13 @@
   <div class="col-9 col-sm-5 col-md-4 mx-auto">
   <main class="form-signin">
   <form>
-    <h1 class="h3 mb-3 fw-normal text-center">John Deere 5065E</h1>
+    <div class="caja_contenedora">
+    <img src="views/app/images/iconos/tractor.png" alt="Logo" width="50" height="44" class="d-inline-block align-text-top tractor">
+    <img src="views/app/images/iconos/sol.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top sol">
+    
+    </div>  
+  
+    <h1 class="h3 mb-3 fw-normal text-center maquina_escribir bg-primary">John Deere 5065E</h1>
     <div id="mensaje"></div>
     <div class="form-floating">
       <input type="email" class="form-control rounded-0 rounded-top "  placeholder="name@example.com" id="txt_email">

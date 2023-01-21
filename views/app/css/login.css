@@ -28,3 +28,103 @@ align-content: center;
   border-radius: 0px;
   z-index: 1;
 }
+
+
+/*animaciones */
+
+.caja_contenedora {
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px auto;
+  position: relative;
+  
+}
+
+.tractor {
+  animation-name: tractor1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes tractor1{
+  0%{
+transform:translate(-100px,90px);
+
+  }
+   100%{
+transform:translate(100px,90px);
+
+  }
+}
+
+.sol {
+  
+  animation-name: sol1;
+  animation-timing-function:ease;
+  animation-duration: 20s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes sol1{
+  0%{
+    transform:translate(-90px,-70px) rotate(0deg);
+       }
+      
+        100%{
+   transform:translate(-90px,-70px) rotate(365deg);
+       }
+}
+
+.pajaro {
+  
+  animation-name: pajaro1;
+  animation-timing-function:ease-out;
+  animation-duration: 5s;
+  animation-direction:normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pajaro1{
+  0%{
+    transform:translate(-100px,0px) rotate(0deg);
+       }
+       0%{
+        transform:translate(-50px,50px) rotate(0deg);
+           }
+      
+      
+        100%{
+   transform:translate(100px,-80px) rotate(30deg);
+       }
+}
+
+.maquina_escribir {
+  color: white;
+  display: block;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid black;
+  width: 18ch;
+  animation: typing 3s steps(12) infinite, blink .5s infinite step-end alternate;
+  
+  
+
+  /*  animation: typing 2s steps(12),
+    blink .5s infinite step-end alternate;*/
+    overflow: hidden;
+    }
+    
+    @keyframes typing {
+    from { width: 0 }
+    }
+    
+    @keyframes blink {
+    50% { border-color: transparent }
+    }
