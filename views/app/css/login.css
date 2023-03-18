@@ -1,6 +1,21 @@
 body{
   background-color: antiquewhite;
 }
+
+
+
+.contenedor{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: .5rem;
+  row-gap: .5rem;
+}
+
+.contenido {
+  width: 48%;
+}
 .flex-container{
   padding: 20px;
   border: black 1px solid;
@@ -33,6 +48,7 @@ align-content: center;
 /*animaciones */
 
 .caja_contenedora {
+  
   overflow: hidden;
   width: 200px;
   height: 200px;
@@ -58,7 +74,7 @@ transform:translate(-100px,90px);
 
   }
    100%{
-transform:translate(100px,90px);
+transform:translate(150px,90px);
 
   }
 }
@@ -74,36 +90,35 @@ transform:translate(100px,90px);
 
 @keyframes sol1{
   0%{
-    transform:translate(-90px,-70px) rotate(0deg);
+    transform:translate(-70px,-70px) rotate(0deg);
        }
       
         100%{
-   transform:translate(-90px,-70px) rotate(365deg);
+   transform:translate(-70px,-70px) rotate(365deg);
        }
 }
 
-.pajaro {
+.avion{
   
-  animation-name: pajaro1;
+  animation-name: avion1;
   animation-timing-function:ease-out;
   animation-duration: 5s;
   animation-direction:normal;
   animation-iteration-count: infinite;
 }
 
-@keyframes pajaro1{
+@keyframes avion1{
   0%{
-    transform:translate(-100px,0px) rotate(0deg);
+    transform:translate(-140px,-60px) rotate(-40deg);
        }
-       0%{
-        transform:translate(-50px,50px) rotate(0deg);
-           }
       
       
         100%{
-   transform:translate(100px,-80px) rotate(30deg);
+   transform:translate(100px,-40px) rotate(20deg);
        }
 }
+
+
 
 .maquina_escribir {
   color: white;
@@ -128,3 +143,5 @@ transform:translate(100px,90px);
     @keyframes blink {
     50% { border-color: transparent }
     }
+    
+    

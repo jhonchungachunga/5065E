@@ -30,7 +30,7 @@ class Orden implements iOrden{
     }
     public function leerOrden(){
     $conexion=new Conexion;
-    $consulta="SELECT o.id,o.descripcion,o.nro_horas,o.minutos,o.precio_hora,o.precio_total,o.fecha,ope.nombre as nombreOperador,i.descripcion as descImplemento,e.descripcion as descEstado,u.email as creadoPor FROM orden_trabajo o left JOIN operador ope on ope.id=o.id_operador LEFT JOIN implemento i on i.id=o.id_implemento LEFT JOIN estado e on e.id=o.id_estado LEFT JOIN usuario u on u.id=o.created_by;";
+    $consulta="SELECT o.id,o.descripcion,o.nro_horas,o.minutos,o.precio_hora,o.precio_total,o.fecha,ope.nombre as nombreOperador,i.descripcion as descImplemento,e.descripcion as descEstado,u.email as creadoPor FROM orden_trabajo o left JOIN operador ope on ope.id=o.id_operador LEFT JOIN implemento i on i.id=o.id_implemento LEFT JOIN estado e on e.id=o.id_estado LEFT JOIN usuario u on u.id=o.created_by order by fecha desc;";
     if($query=$conexion->query($consulta)){
         if(($query->num_rows)>0){
             while($row=$query->fetch_array(MYSQLI_ASSOC)){
@@ -39,8 +39,8 @@ class Orden implements iOrden{
                     'descripcion'=>$this->descripcion=$row['descripcion'],
                     'nro_horas'=>$this->nHoras=$row['nro_horas'],
                     'minutos'=>$this->minutos=$row['minutos'],
-                    'precio_hora'=>$this->precio=$row['precio_hora'],
-                    'precio_total'=>$this->precio=$row['precio_total'],
+                    'precio_hora'=>$this->precioHora=$row['precio_hora'],
+                    'precio_total'=>$this->precioTotal=$row['precio_total'],
                     'fecha'=>$this->fecha=$row['fecha'],
                     'nombreOperador'=>$row['nombreOperador'],
                     'descImplemento'=>$row['descImplemento'],

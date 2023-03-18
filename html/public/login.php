@@ -7,6 +7,7 @@
     <div class="caja_contenedora">
     <img src="views/app/images/iconos/tractor.png" alt="Logo" width="50" height="44" class="d-inline-block align-text-top tractor">
     <img src="views/app/images/iconos/sol.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top sol">
+    <img src="views/app/images/iconos/avion.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top avion">
     
     </div>  
   
