@@ -20,8 +20,8 @@ require_once 'core/model/Usuario.php';
 require_once 'core/model/Select.php';
 require_once 'core/model/Orden.php';
 require_once 'core/model/Estadistica.php';
+require_once 'core/model/EstadisticaOperador.php';
 require_once 'core/model/Comunes.php';
-require_once 'core/model/TrabajosCron.php';
 
 
 require_once 'core/bin/functions/Encrypt.php';

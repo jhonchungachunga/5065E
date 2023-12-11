@@ -6,6 +6,7 @@ public function totalHorasMinutosImplemento(string $implemento);
 public function totalCantidad();
 }
 class Estadistica implements iEstadistica{
+protected $implemento;
 public function totalHoras(){
 $conexion=new Conexion;
 $consulta="SELECT SUM(nro_horas) as horas from orden_trabajo;";
@@ -33,6 +34,7 @@ public function totalMinutos(){
 }
 public function totalHorasMinutosImplemento($implemento){
     $conexion=new Conexion;
+    $this->implemento=$conexion->real_escape_string($implemento);
     $consulta="SELECT SUM(nro_horas) as horas, SUM(minutos) as minutos  from orden_trabajo WHERE id_implemento='$implemento';";
     if($resultado=$conexion->query($consulta)){
         $row=$resultado->fetch_assoc();

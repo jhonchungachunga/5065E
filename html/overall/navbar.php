@@ -16,6 +16,9 @@
           <a class="nav-link" href="?accion=orden">registrar</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="?accion=estadistica">ver estadisticas</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="?view=cerrar_session">cerrar session</a>
         </li>
       </ul>

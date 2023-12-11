@@ -1,0 +1,1 @@
+<?php include (HTML_DIR.'/index/estadistica.php'); ?>
