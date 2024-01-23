@@ -7,7 +7,7 @@ $horas=$estadisticas->totalHoras();
 $minutos=$estadisticas->totalMinutos();
 $minutosA_Horas=$minutos/60;
 $cantidad=$estadisticas->totalCantidad();
-echo '<div class="contenedor"><div class="card m-1" style="width: 18rem;">
+echo '<div class="contenedor"><div class="card m-1 col-sm-12 col-md-8 col-lg-8 col-xl-8" >
 <ul class="list-group list-group-flush">
   <li class="list-group-item">Horas ',round($horas+$minutosA_Horas,1),'</li>
   <li class="list-group-item">Rastra ',round($totalHorasMinutosImplemento=$estadisticas->totalHorasMinutosImplemento(4),1),'</li>
@@ -20,14 +20,14 @@ echo '<h3>ordenes generadas</h3>';
 
 
 
-echo '<div class="contenedor">';
+echo '<div class="contenedor col-12">';
 
 if($datos){
   
  
     foreach($datos as $item){
       $estilo=$item['descEstado']=='PENDIENTE'?'table-danger':'';
-      echo '<div class="card contenido">';
+      echo '<div class="card contenido col-sm-12 col-md-3 col-lg-3 col-xl-3">';
       if($item['descImplemento']=='Arado'){
         echo '<img src="views/app/images/iconos/arado.png" class="card-img-top" style="width:50px;" alt="...">';
       }else if($item['descImplemento']=='Surcadora'){
@@ -37,8 +37,8 @@ if($datos){
       }
       
 
-      echo '<div class="card-body">
-        <h5 class="card-title">',Comunes::fecha($item['fecha']),' </h5>';
+      echo '<div class="card-body ">
+      <h5 class="card-title">',Comunes::fecha($item['fecha']),' </h5>';
         echo $item['descEstado']=='PENDIENTE'?'<span class="badge text-bg-warning">'.$item['descEstado'].'</span><div class="spinner-grow text-warning" role="status">
          <span class="visually-hidden">Loading...</span>
       </div><br>':'<span class="badge text-bg-info">'.$item['descEstado'].'</span><br>';
