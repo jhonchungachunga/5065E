@@ -1,5 +1,5 @@
 <?php 
-$operacion=isset($_REQUEST['operacion'])?$_REQUEST['operacion']:'default';
+$operacion=isset($_REQUEST['operacion'])?$_REQUEST['operacion']:'';
 switch($operacion){
     case 'eliminar':
         $id=$_REQUEST['id'];

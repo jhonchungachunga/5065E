@@ -1,4 +1,7 @@
 <?php 
+$combustible=new Combustible;
+
+
 $estOperador=new EstadisticaOperador;
 $anho=isset($_POST['anho'])?$_POST['anho']:'';
 echo '<div class="mb-3">';
@@ -12,7 +15,12 @@ echo '<div class="mb-3">';
 <option value="2024">2024</option>
 <?php 
 echo '</select><button class="w-100 btn btn-md btn-secondary" type="submit">Filtrar resultados</button></form>';
-
+$metaAnual=400;
+$horasTrabajadas=$estOperador->totalHorasMinutosImplementoAnho('','',$anho);
+$resultado=$horasTrabajadas/$metaAnual*100;
+echo '<br><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="',$resultado,'" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: ',round($resultado,1),'%">',round($resultado,1),'%</div>
+</div>';
 echo '<h1 class="fw-bold text-center">Estadisticas '.$anho.'</h1>';
 
 $horas=$estOperador->totalHorasMinutosImplementoAnho('','',$anho);
@@ -30,6 +38,9 @@ echo '<div class="contenedor"><div class="card m-1" style="width: 18rem;">
   <li class="list-group-item">Arado '.round($arado,1).'</li>
   <li class="list-group-item">Surcadora '.round($surcadora,1).'</li>
   <li class="list-group-item">Total S/. '.round($totalCantidad,1).'</li>
+  <li class="list-group-item">Compra combustible S/.',$combustible->totalGastoCombustible($anho),'</li>
+  <li class="list-group-item">Gastos de mantenimiento</li>
+  <li class="list-group-item">Utilidad S/.', $totalCantidad-$combustible->totalGastoCombustible($anho),'</li>
 </ul>
 </div>
 </div>';

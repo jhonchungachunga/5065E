@@ -7,7 +7,7 @@ $horas=$estadisticas->totalHoras();
 $minutos=$estadisticas->totalMinutos();
 $minutosA_Horas=$minutos/60;
 $cantidad=$estadisticas->totalCantidad();
-echo '<div class="contenedor"><div class="card m-1 col-sm-12 col-md-8 col-lg-8 col-xl-8" >
+echo '<div class="contenedor"><div class="card m-1 col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8" >
 <ul class="list-group list-group-flush">
   <li class="list-group-item">Horas ',round($horas+$minutosA_Horas,1),'</li>
   <li class="list-group-item">Rastra ',round($totalHorasMinutosImplemento=$estadisticas->totalHorasMinutosImplemento(4),1),'</li>
@@ -27,7 +27,7 @@ if($datos){
  
     foreach($datos as $item){
       $estilo=$item['descEstado']=='PENDIENTE'?'table-danger':'';
-      echo '<div class="card contenido col-sm-12 col-md-3 col-lg-3 col-xl-3">';
+      echo '<div class="card contenido col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 m-1">';
       if($item['descImplemento']=='Arado'){
         echo '<img src="views/app/images/iconos/arado.png" class="card-img-top" style="width:50px;" alt="...">';
       }else if($item['descImplemento']=='Surcadora'){
