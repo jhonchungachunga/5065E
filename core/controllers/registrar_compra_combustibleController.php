@@ -12,6 +12,6 @@ switch($operacion){
         }
         break;
     default:
-        include (HTML_DIR.'/index/comprar_combustible.php');
+        include (HTML_DIR.'/index/registrar_compra_combustible.php');
         break;
 }

@@ -15,6 +15,6 @@ switch($operacion){
     }    
     break;
     default:
-    include (HTML_DIR.'/index/registrar_Mantenimiento.php');
+    include (HTML_DIR.'/index/registrar_mantenimiento.php');
     break;
 }

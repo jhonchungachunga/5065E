@@ -8,6 +8,6 @@ switch($operacion){
         unset($id,$combustible);
         break;
     default:
-        include (HTML_DIR.'/index/listaCompraCombustible.php');
+        include (HTML_DIR.'/index/compra_combustible.php');
         break;
 }
