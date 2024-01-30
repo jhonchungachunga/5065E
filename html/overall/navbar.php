@@ -18,12 +18,19 @@
         <li class="nav-item">
           <a class="nav-link" href="?accion=registrar_compra_combustible">registrar compra combustible</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="?accion=registrar_mantenimiento">registrar mantenimiento</a>
+        </li>
         
         <li class="nav-item">
           <a class="nav-link" href="?accion=estadistica">ver estadisticas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?accion=compra_combustible">ver compra de combustible</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="?accion=mantenimientos">ver mantenimientos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?view=cerrar_session">cerrar session</a>

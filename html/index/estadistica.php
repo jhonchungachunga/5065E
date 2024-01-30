@@ -1,6 +1,6 @@
 <?php 
 $combustible=new Combustible;
-
+$mantenimiento=new Mantenimiento;
 
 $estOperador=new EstadisticaOperador;
 $anho=isset($_POST['anho'])?$_POST['anho']:'';
@@ -29,6 +29,8 @@ $arado=$estOperador->totalHorasMinutosImplementoAnho('','1',$anho);
 $surcadora=$estOperador->totalHorasMinutosImplementoAnho('','3',$anho);
 
 $totalCantidad=$estOperador->totalCantidadOperadorAnho('',$anho);
+$gastoCombustible=$combustible->totalGastoCombustible($anho);
+$gastoMantenimiento=$mantenimiento->totalGastosMantenimiento($anho);
 
 echo '<div class="contenedor"><div class="card m-1" style="width: 18rem;">
 <ul class="list-group list-group-flush">
@@ -38,9 +40,9 @@ echo '<div class="contenedor"><div class="card m-1" style="width: 18rem;">
   <li class="list-group-item">Arado '.round($arado,1).'</li>
   <li class="list-group-item">Surcadora '.round($surcadora,1).'</li>
   <li class="list-group-item">Total S/. '.round($totalCantidad,1).'</li>
-  <li class="list-group-item">Compra combustible S/.',$combustible->totalGastoCombustible($anho),'</li>
-  <li class="list-group-item">Gastos de mantenimiento</li>
-  <li class="list-group-item">Utilidad S/.', $totalCantidad-$combustible->totalGastoCombustible($anho),'</li>
+  <li class="list-group-item">Gastos de combustible S/.',round($gastoCombustible,1),'</li>
+  <li class="list-group-item">Gastos de mantenimiento S/.',$gastoMantenimiento,'</li>
+  <li class="list-group-item">Utilidad S/.', $totalCantidad-$gastoCombustible-$gastoMantenimiento,'</li>
 </ul>
 </div>
 </div>';

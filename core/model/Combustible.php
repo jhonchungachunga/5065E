@@ -76,7 +76,7 @@ class Combustible implements iCombustible{
         $conexion=new Conexion;
         $this->anho=$conexion->real_escape_string($anho);
 
-        $consulta="SELECT SUM(totalcompra) as total from combustible WHERE  fecha like '%$anho%';";
+        $consulta="SELECT SUM(totalcompra) as total from combustible WHERE  fecha like '%$this->anho%';";
         if($query=$conexion->query($consulta)){
             $row=$query->fetch_assoc();
             $total=$row['total'];

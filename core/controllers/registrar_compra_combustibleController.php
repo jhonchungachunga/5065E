@@ -3,8 +3,8 @@ $operacion=isset($_REQUEST['operacion'])?$_REQUEST['operacion']:'';
 switch($operacion){
     case 'crear':
         if(!empty($_REQUEST['total_compra']) && !empty($_REQUEST['fecha'])){
-           echo  $totalCompra=$_REQUEST['total_compra'];
-            echo $fecha=$_REQUEST['fecha'];
+           $totalCompra=$_REQUEST['total_compra'];
+           $fecha=$_REQUEST['fecha'];
 
             $combustible=new Combustible;
             $combustible->crearOrdenCombustible($totalCompra,$fecha);
