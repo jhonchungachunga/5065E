@@ -3,6 +3,7 @@ interface iSelect{
 public function listaOperador();
 public function listaImplemento();
 public function listaEstado();
+public function listarProductosMantenimiento();
 }
 class Select implements iSelect{
 
@@ -59,6 +60,25 @@ public function listaEstado(){
         }
         $query->free();
     }
+}
+
+
+public function listarProductosMantenimiento(){
+$conexion=new Conexion;    
+$consulta="SELECT * from productos_mantenimiento";
+if($query=$conexion->query($consulta)){
+    if(($query->num_rows)>0){
+        while($row=$query->fetch_array(MYSQLI_ASSOC)){
+            $array[]=[
+                'idproductos_mantenimiento'=>$row['idproductos_mantenimiento'],
+                'suministro'=>$row['suministro'],
+                'articulo'=>$row['articulo']
+            ];
+        }return $array;
+    }
+    $query->free();
+}
+$conexion->close();
 }
 
 

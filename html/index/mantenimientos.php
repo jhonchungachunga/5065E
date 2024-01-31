@@ -14,7 +14,7 @@ if($datos){
         <div class="card-body">
           <h5 class="card-title">S/. ',$item['precio'],'</h5>
           <p class="card-text">',$item['descripcion'],'</p>
-
+          <p><a class="link-opacity-100" href="?accion=ficha_mantenimiento&id='.$item['idmantenimiento'].'">ver mas</a></p>
           <div class="btn-group" role="group">
           <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       opciones

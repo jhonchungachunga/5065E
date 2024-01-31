@@ -4,7 +4,9 @@ interface iMantenimiento{
     public function leerRegistrosMantenimiento();
     public function editarOrdenMantenimiento(int $id,int $horometro,string $descripcion,int $precio, string $fecha);
     public function eliminarOrdenMantenimiento(int $id);
+
     public function totalGastosMantenimiento($anho);
+    public function fichaMantenimiento(int $id);
 }
 class Mantenimiento implements iMantenimiento{
 protected $id,$horometro,$descripcion,$precio,$fecha;
@@ -87,5 +89,28 @@ if($query=$conexion->query($consulta)){
     echo 'no se realizo la consulta';
 }
 $conexion->close();
+}
+
+public function fichaMantenimiento(int $id){
+    $conexion=new Conexion;
+    $this->id=$conexion->real_escape_string($id);
+    $consulta="SELECT * FROM mantenimiento where idmantenimiento='$this->id';";
+
+    if($query=$conexion->query($consulta)){
+        if(($query->num_rows)>0){
+            while($row=$query->fetch_array(MYSQLI_ASSOC)){
+                $array[]=[
+                    'idmantenimiento'=>$this->id=$row['idmantenimiento'],
+                    'horometro'=>$this->horometro=$row['horometro'],
+                    'descripcion'=>$this->descripcion=$row['descripcion'],
+                    'precio'=>$this->precio=$row['precio'],
+                    'fecha'=>$this->fecha=$row['fecha']
+                ];
+            } return $array;
+        }$query->free();
+        
+
+    }
+    $conexion->close();
 }
 }
